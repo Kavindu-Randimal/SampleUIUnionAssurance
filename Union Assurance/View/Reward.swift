@@ -30,7 +30,7 @@ struct Reward: View {
                         Spacer()
                         Image(systemName: "bell")
                             .foregroundColor(Color.white)
-                            .padding(.trailing,5)
+                            .padding(.trailing,10)
                         
                     }
                     .padding(.bottom,10)
