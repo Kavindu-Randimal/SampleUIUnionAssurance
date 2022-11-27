@@ -12,7 +12,10 @@ struct Reward: View {
     @State private var selection = 0;
     @StateObject var viewModel = ViewModel()
     
-   
+    @State private var showingAlert = false
+
+    
+    
     var body: some View {
         
         ScrollView(showsIndicators: false){
@@ -30,9 +33,16 @@ struct Reward: View {
                             .foregroundColor(.white)
                             .padding(.leading,20)
                         Spacer()
-                        Image(systemName: "bell")
-                            .foregroundColor(Color.white)
-                            .padding(.trailing)
+                        
+                        Button(action: { showingAlert = true
+                        }){
+                            Image(systemName: "bell")
+                                .foregroundColor(Color.white)
+                                .padding(.trailing)
+                            
+                        }.alert("Notification Empty", isPresented: $showingAlert) {
+                            Button("OK") { }
+                        }
                         
                     }
                     .padding(.bottom,10)
@@ -50,7 +60,8 @@ struct Reward: View {
                         .foregroundColor(.white)
                         .padding(.bottom,10)
                     Button(action: {
-                        print("insurance covered")
+//                        print("insurance covered")
+                        showingAlert = true
                     }) {
                         Text("Insurance Cover")
                             .frame(minWidth: 0, maxWidth: 180 )
@@ -61,13 +72,13 @@ struct Reward: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 25)
                                     .stroke(Color.white, lineWidth: 2)
-                            )
+                            ).alert("Not implemented yet", isPresented: $showingAlert) {
+                                Button("OK") { }
+                            }
                     }
-                    
                     .background(Color.white)
                     .cornerRadius(20)
                     .padding(.top,20)
-                    
                 }
                 
             }
@@ -181,6 +192,7 @@ struct Reward: View {
         
     }
     
+    
 }
 
 
@@ -190,14 +202,14 @@ extension Color {
     static let basiccolor = Color("basic")
     static let background = Color("background")
     static let logocolor = Color("LogoColor")
-
+    
 }
 func dateFromString(_ string: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.date(from: string) ?? Date()
-    }
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = .current
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    return dateFormatter.date(from: string) ?? Date()
+}
 
 
 
