@@ -18,7 +18,7 @@ struct UrlImageView: View {
             Image(uiImage: urlImageModel.image ?? UrlImageView.defaultImage!)
                 .resizable()
                 .cornerRadius(10)
-                .frame(width: 320, height: 140)
+                .frame(width: 320, height: 170)
                 
                 
         }

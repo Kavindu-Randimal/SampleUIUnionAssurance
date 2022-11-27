@@ -11,6 +11,8 @@ struct Reward: View {
     
     @State private var selection = 0;
     @StateObject var viewModel = ViewModel()
+    
+   
     var body: some View {
         
         ScrollView(showsIndicators: false){
@@ -30,7 +32,7 @@ struct Reward: View {
                         Spacer()
                         Image(systemName: "bell")
                             .foregroundColor(Color.white)
-                            .padding(.trailing,10)
+                            .padding(.trailing)
                         
                     }
                     .padding(.bottom,10)
@@ -64,7 +66,6 @@ struct Reward: View {
                     
                     .background(Color.white)
                     .cornerRadius(20)
-                    
                     .padding(.top,20)
                     
                 }
@@ -100,20 +101,21 @@ struct Reward: View {
                                     Text(hotel.sub_title!)
                                         .foregroundColor(.gray)
                                         .font(.system(size: 12))
-                                        .lineLimit(10)
+                                        .lineLimit(4)
                                         .padding(.leading)
                                         .fontWeight(.bold)
-                                    HStack{
-                                        Text("Expire date:")
-                                            .foregroundColor(.red)
-                                            .font(.system(size: 12))
-                                        Text(hotel.expire_date)
-                                            .foregroundColor(.red)
-                                            .font(.system(size: 12))
+                                    VStack{
+                                        HStack{
+                                            Text("Expire date:")
+                                                .foregroundColor(.red)
+                                                .font(.system(size: 12))
+                                            Text(hotel.expire_date)
+                                                .foregroundColor(.red)
+                                                .font(.system(size: 12))
+                                        }
+                                        .padding()
                                     }
-                                    .padding()
-                                    
-                                    
+                                    .padding(.bottom,10)
                                 }
                                 .frame(width:320, height: 270)
                                 .background(Color.white)
@@ -149,10 +151,18 @@ struct Reward: View {
                                     .lineLimit(10)
                                     .padding(.leading)
                                     .fontWeight(.bold)
-                                Text(hotel.expire_date)
-                                    .foregroundColor(.red)
+                                VStack{
+                                    HStack{
+                                        Text("Expire date:")
+                                            .foregroundColor(.red)
+                                            .font(.system(size: 12))
+                                        Text(hotel.expire_date)
+                                            .foregroundColor(.red)
+                                            .font(.system(size: 12))
+                                    }
                                     .padding()
-                                    .font(.system(size: 12))
+                                }
+                                .padding(.bottom,10)
                                 
                             }
                             .frame(width:320, height: 270)
@@ -182,7 +192,12 @@ extension Color {
     static let logocolor = Color("LogoColor")
 
 }
-
+func dateFromString(_ string: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = .current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.date(from: string) ?? Date()
+    }
 
 
 

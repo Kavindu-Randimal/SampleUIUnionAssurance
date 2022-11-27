@@ -19,6 +19,7 @@
 		DF547231292FB55400FBFB13 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF547230292FB55400FBFB13 /* Network.swift */; };
 		DF547233292FFCF000FBFB13 /* URLImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF547232292FFCF000FBFB13 /* URLImageModel.swift */; };
 		DF547237292FFE0F00FBFB13 /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF547236292FFE0F00FBFB13 /* UrlImageView.swift */; };
+		DF5472402932781F00FBFB13 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54723F2932781F00FBFB13 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DF547232292FFCF000FBFB13 /* URLImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageModel.swift; sourceTree = "<group>"; };
 		DF547236292FFE0F00FBFB13 /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
 		DF547238293001C300FBFB13 /* Union-Assurance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Union-Assurance-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DF54723F2932781F00FBFB13 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		DF547214292E5B2100FBFB13 /* Union Assurance */ = {
 			isa = PBXGroup;
 			children = (
+				DF54723E293277CD00FBFB13 /* Extensions */,
 				DF547238293001C300FBFB13 /* Union-Assurance-Info.plist */,
 				DF54722E292F585800FBFB13 /* Model */,
 				DF547223292F1B7C00FBFB13 /* View */,
@@ -107,6 +110,14 @@
 				DF547232292FFCF000FBFB13 /* URLImageModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DF54723E293277CD00FBFB13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DF54723F2932781F00FBFB13 /* Date+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF547218292E5B2100FBFB13 /* ContentView.swift in Sources */,
+				DF5472402932781F00FBFB13 /* Date+Extension.swift in Sources */,
 				DF547233292FFCF000FBFB13 /* URLImageModel.swift in Sources */,
 				DF54722B292F1E2800FBFB13 /* Leaderboard.swift in Sources */,
 				DF547231292FB55400FBFB13 /* Network.swift in Sources */,
