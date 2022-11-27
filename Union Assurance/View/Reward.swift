@@ -13,6 +13,7 @@ struct Reward: View {
     @StateObject var viewModel = ViewModel()
     
     @State private var showingAlert = false
+    @State private var coverAlert = false
 
     
     
@@ -61,7 +62,7 @@ struct Reward: View {
                         .padding(.bottom,10)
                     Button(action: {
 //                        print("insurance covered")
-                        showingAlert = true
+                        coverAlert = true
                     }) {
                         Text("Insurance Cover")
                             .frame(minWidth: 0, maxWidth: 180 )
@@ -72,7 +73,8 @@ struct Reward: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 25)
                                     .stroke(Color.white, lineWidth: 2)
-                            ).alert("Not implemented yet", isPresented: $showingAlert) {
+                            ).alert("Not implemented yet", isPresented: $coverAlert
+                            ) {
                                 Button("OK") { }
                             }
                     }
