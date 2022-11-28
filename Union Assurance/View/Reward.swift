@@ -9,12 +9,13 @@ import SwiftUI
 
 struct Reward: View {
     
+    
     @State private var selection = 0;
     @StateObject var viewModel = ViewModel()
     
     @State private var showingAlert = false
     @State private var coverAlert = false
-
+    
     
     
     var body: some View {
@@ -61,7 +62,7 @@ struct Reward: View {
                         .foregroundColor(.white)
                         .padding(.bottom,10)
                     Button(action: {
-//                        print("insurance covered")
+                        //                        print("insurance covered")
                         coverAlert = true
                     }) {
                         Text("Insurance Cover")
@@ -111,12 +112,14 @@ struct Reward: View {
                                         .foregroundColor(.black)
                                         .padding(.leading)
                                         .fontWeight(.bold)
-                                    Text(hotel.sub_title!)
-                                        .foregroundColor(.gray)
-                                        .font(.system(size: 12))
-                                        .lineLimit(4)
-                                        .padding(.leading)
-                                        .fontWeight(.bold)
+                                    HStack{ Text(hotel.sub_title!)
+                                            .multilineTextAlignment(.leading)
+                                            .foregroundColor(.gray)
+                                            .font(.system(size: 12))
+                                            .fontWeight(.bold)
+                                    }
+                                    .padding(.leading)
+                                    .frame(width:310, height: 42)
                                     VStack{
                                         HStack{
                                             Text("Expire date:")
@@ -128,7 +131,7 @@ struct Reward: View {
                                         }
                                         .padding()
                                     }
-                                    .padding(.bottom,10)
+                                    .padding(.bottom,30)
                                 }
                                 .frame(width:320, height: 270)
                                 .background(Color.white)
@@ -158,12 +161,15 @@ struct Reward: View {
                                     .foregroundColor(.black)
                                     .padding(.leading)
                                     .fontWeight(.bold)
-                                Text(hotel.sub_title!)
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 12))
-                                    .lineLimit(10)
-                                    .padding(.leading)
-                                    .fontWeight(.bold)
+                                HStack{ Text(hotel.sub_title!)
+                                        .multilineTextAlignment(.leading)
+                                        .foregroundColor(.gray)
+                                        .font(.system(size: 12))
+                                    
+                                        .fontWeight(.bold)
+                                }
+                                .padding(.leading)
+                                .frame(width:310, height: 42)
                                 VStack{
                                     HStack{
                                         Text("Expire date:")
